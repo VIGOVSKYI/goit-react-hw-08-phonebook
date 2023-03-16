@@ -1,0 +1,9 @@
+.link {
+    display: inline-block;
+    margin: 0 5px;
+    text-decoration: none;
+    color: olive;
+}
+.link:global(.active) {
+    font-weight: bold;
+}
