@@ -25,8 +25,7 @@ const MyContacts = () => {
   }, [dispatch]);
 
   const onAddContact = ({ name, phone }) => {
-    const action = fetchAddContact({ name, phone });
-    dispatch(action);
+    dispatch(fetchAddContact({ name, phone }));
   };
 
   const onDeleteContact = (id) => {
