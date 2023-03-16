@@ -5,11 +5,7 @@ import MyContactList from '../MyContactList/MyContactList.jsx';
 import MyContactFilter from '../MycontactFilter/MyContactFilter.jsx';
 import MyContactForm from '../MyContcatForm/MyContactForm.jsx';
 
-import {
-  fetchAllContacts,
-  fetchAddContact,
-  fetchDeleteContact,
-} from '../../redux/contacts/contacts-operations';
+import { fetchAllContacts, fetchAddContact, fetchDeleteContact } from '../../redux/contacts/contacts-operations';
 import { setFilter } from '../../redux/filter/filter-slice';
 
 import { getFilteredContact } from '../../redux/contacts/contacts-selectors';
@@ -54,13 +50,8 @@ const MyContacts = () => {
         <div className={styles.block}>
           <h4 className={styles.title}>Contacts</h4>
           <MyContactFilter value={filter} handlFilter={handlFilter} />
-          <MyContactList
-            deleteContact={onDeleteContact}
-            contacts={filteredContacts}
-          />
-          {!filteredContacts.length && (
-            <p className={styles.message}>No contacts in the list</p>
-          )}
+          <MyContactList deleteContact={onDeleteContact} contacts={filteredContacts} />
+          {!filteredContacts.length && <p className={styles.message}>No contacts in the list</p>}
         </div>
       </div>
     </div>

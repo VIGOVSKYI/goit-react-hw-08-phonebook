@@ -1,25 +1,31 @@
-import TextField from "../../shared/component/TextField/TextField";
-import Button from "../../shared/component/Button/Button";
+import TextField from '../../shared/component/TextField/TextField';
+import Button from '../../shared/component/Button/Button';
 
-import useForm from "../../shared/hooks/useForm";
+import useForm from '../../shared/hooks/useForm';
 
-import fields from "./fields";
-import initialState from "./initialState";
+import fields from './fields';
+import initialState from './initialState';
 
-import styles from "./login-form.module.css";
+import styles from './login-form.module.css';
 
-const LoginForm = ({onSubmit}) => {
-    const {state, handleChange, handleSubmit} = useForm({initialState, onSubmit});
-    const { email, password} = state;
+const LoginForm = ({ onSubmit }) => {
+  const { state, handleChange, handleSubmit } = useForm({
+    initialState,
+    onSubmit,
+  });
+  const { email, password } = state;
 
-    return (
-        <form onSubmit={handleSubmit} className={styles.form}>
-           
-            <TextField value={email} handleChange={handleChange} {...fields.email} />
-            <TextField value={password} handleChange={handleChange} {...fields.password} />
-            <Button>Login</Button>
-        </form>
-    )
-}
+  return (
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <TextField value={email} handleChange={handleChange} {...fields.email} />
+      <TextField
+        value={password}
+        handleChange={handleChange}
+        {...fields.password}
+      />
+      <Button>Login</Button>
+    </form>
+  );
+};
 
 export default LoginForm;

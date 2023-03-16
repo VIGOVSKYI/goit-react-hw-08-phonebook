@@ -1,11 +1,11 @@
-import MyContacts from "../../components/MyContacts/MyContacts";
+import MyContacts from '../../components/MyContacts/MyContacts';
 
 const MyContactsPage = () => {
-    return (
-        <div>
-            <MyContacts />
-        </div>
-    )
-}
+  return (
+    <div>
+      <MyContacts />
+    </div>
+  );
+};
 
 export default MyContactsPage;
