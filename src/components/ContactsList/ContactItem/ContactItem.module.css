@@ -1,0 +1,19 @@
+.li {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    margin-left: 15px;
+    width: 100px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: olive;
+}
+
+.button:hover {
+    background: linear-gradient( rgb(116, 221, 241));
+}
