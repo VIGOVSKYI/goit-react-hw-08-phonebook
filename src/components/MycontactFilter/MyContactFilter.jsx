@@ -1,13 +1,22 @@
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filter/filter-slice';
+import { getFilter } from 'redux/filter/filter-selectors';
 
 import styles from './my-contact-filter.module.css';
 
-const MyContactFilter = ({ handlFilter, value }) => {
+const MyContactFilter = () => {
+  const dispatch = useDispatch();
+  const value = useSelector(getFilter);
+
+  const handleFilter = e => {
+    dispatch(setFilter(e.currentTarget.value));
+  };
+
   return (
     <div className={styles.formGroup}>
       <input
         value={value}
-        onChange={handlFilter}
+        onChange={handleFilter}
         className={styles.input}
         type="text"
         name="filter"
@@ -21,7 +30,3 @@ const MyContactFilter = ({ handlFilter, value }) => {
 };
 
 export default MyContactFilter;
-
-MyContactFilter.prototypes = {
-  handlFilter: PropTypes.func.isRequired,
-};
